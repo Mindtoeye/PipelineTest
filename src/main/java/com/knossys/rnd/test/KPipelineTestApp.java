@@ -47,13 +47,12 @@ public class KPipelineTestApp {
    * - Use disk synchronization if possible instead of a network
    */
 	private Boolean runPipelineLocal(String aPipelineFile) {
-		logger.info ("runPipeline ()");
+		logger.info ("runPipelineLocal ()");
 		
 		config = new KnossysConfig ();
 		config.init ();
 			
-		//taskManager=new TaskManager (config);
-		taskManager=new TaskManager ();
+		taskManager=new TaskManager (config);
 		
 		return (taskManager.runPipelineLocal(aPipelineFile));
 	}
